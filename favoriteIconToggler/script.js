@@ -1,21 +1,15 @@
-itemList=document.querySelector(".item-list");
 
-btnList=itemList.querySelectorAll(".favorite-icon");
 
-btnList.forEach(btn=>{
-    btn.addEventListener("click", ()=>{toggleIcon(btn)});
-})
+const spans = document.querySelectorAll(".favorite-icon");
 
-  function toggleIcon(btn){
-     if (btn.classList.contains("filled")){
-       btn.classList.remove("filled");
-       btn.innerHTML="&#9825";
-     }else{
-      btn.classList.add("filled");
-      
-      btn.innerHTML="&#10084;"
-
-     }
-
-     btn.querySelector(".filled").style.Color="red";
-  }
+spans.forEach((span) => {
+  span.addEventListener("click", () => {
+    if (span.classList.contains("filled")) {
+      span.classList.remove("filled");
+      span.innerHTML = "&#9825;"; 
+    } else {
+      span.classList.add("filled");
+      span.innerHTML = "&#10084;";  
+    }
+  });
+});
